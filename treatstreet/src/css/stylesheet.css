@@ -1,0 +1,86 @@
+body{
+	background-color: #e6f3f7;
+}
+.background{
+	width: 100%;
+	height: 20%;
+}
+
+/********Navbar********/
+
+.navbar-color{
+	background-color: white;
+}
+
+.navbar-edit{
+	border-radius: 0px;
+}
+
+input[type=submit]{
+	background-color: white;
+	border: none;
+	color: black;
+	font-weight: bold;
+}
+
+.caret{
+	color: black;
+	margin-top: -2px;
+	margin-right: 20px;
+}
+
+.nav .open > a:hover{
+	background-color: white;
+}
+
+.nav > li > a:hover{
+	background-color: white;
+}
+
+.nav .open > a:focus{
+	background-color: white;
+}
+
+.nav > li > a{
+	background-color: white;
+}
+
+.dropdown-menu > li > a:focus{
+	background-color: white;
+}
+
+.home-button{
+	color: black;
+	font-weight: bold;
+	font-size: 1.3em;
+	margin-right: 10px;
+}
+.home-button:hover{
+	color: black;
+}
+
+.brand-color, .brand-color:hover{
+	color:black;
+	font-size: 2em;
+	margin-right: 15%;
+}
+
+.sub-menu{
+	display: block;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	width: 100%;
+	text-align: left;
+	font-size: 1.2em;
+}
+
+.sub-menu:hover{
+	background-color: #e6f3f7;
+}
+
+.main-menu-item{
+	font-size: 1.3em;
+	margin-top: 12px;
+	margin-right: -5px;
+}
+
