@@ -16,46 +16,48 @@ $out .= '<nav class="navbar navbar-color navbar-edit">
 			          <input class = "sub-menu menu-item" type = "submit" value = "White">
 			          <input class = "sub-menu menu-item" type = "submit" value = "Dark">
 			          <input class = "sub-menu menu-item" type = "submit" value = "Specialty">
+			          <input class = "sub-menu menu-item" type = "submit" value = "Name-Brand">
 			        </ul>
 			      </li>
 			      <li class="dropdown">
 			        <input class = "main-menu-item menu-item" type = "submit" value = "Hard Candy">
 			        <span class="caret"></span>
 			        <ul class="dropdown-menu">
-			          <input class = "sub-menu menu-item" type = "submit" value = "Milk">
-			          <input class = "sub-menu menu-item" type = "submit" value = "White">
-			          <input class = "sub-menu menu-item" type = "submit" value = "Dark">
-			          <input class = "sub-menu menu-item" type = "submit" value = "Specialty">
+			          <input class = "sub-menu menu-item" type = "submit" value = "Lollipops">
+			          <input class = "sub-menu menu-item" type = "submit" value = "Name Brand">
+			          <input class = "sub-menu menu-item" type = "submit" value = "Mints">
+			          <input class = "sub-menu menu-item" type = "submit" value = "Long-Lasting">
 			        </ul>
 			      </li>
 			      <li class="dropdown">
 			        <input class = "main-menu-item menu-item" type = "submit" value = "Chewy">
 			        <span class="caret"></span>
 			        <ul class="dropdown-menu">
-			          <input class = "sub-menu menu-item" type = "submit" value = "Milk">
-			          <input class = "sub-menu menu-item" type = "submit" value = "White">
-			          <input class = "sub-menu menu-item" type = "submit" value = "Dark">
-			          <input class = "sub-menu menu-item" type = "submit" value = "Specialty">
+			          <input class = "sub-menu menu-item" type = "submit" value = "Caramel">
+			          <input class = "sub-menu menu-item" type = "submit" value = "Taffy">
+			          <input class = "sub-menu menu-item" type = "submit" value = "Chewing Gum">
+			          <input class = "sub-menu menu-item" type = "submit" value = "Jelly Beans">
+			          <input class = "sub-menu menu-item" type = "submit" value = "Gummies">
 			        </ul>
 			      </li>
 			      <li class="dropdown">
 			        <input class = "main-menu-item menu-item" type = "submit" value = "Holiday">
 			        <span class="caret"></span>
 			        <ul class="dropdown-menu">
-			          <input class = "sub-menu menu-item" type = "submit" value = "Milk">
-			          <input class = "sub-menu menu-item" type = "submit" value = "White">
-			          <input class = "sub-menu menu-item" type = "submit" value = "Dark">
-			          <input class = "sub-menu menu-item" type = "submit" value = "Specialty">
+			          <input class = "sub-menu menu-item" type = "submit" value = "Christmas">
+			          <input class = "sub-menu menu-item" type = "submit" value = "Hannukah">
+			          <input class = "sub-menu menu-item" type = "submit" value = "Thanksgiving">
+			          <input class = "sub-menu menu-item" type = "submit" value = "Halloween">
 			        </ul>
 			      </li>
 			      <li class="dropdown">
-			        <input class = "main-menu-item menu-item" type = "submit" value = "More Treats">
+			        <input class = "main-menu-item menu-item" type = "submit" value = "By Type">
 			        <span class="caret"></span>
 			        <ul class="dropdown-menu">
-			          <input class = "sub-menu menu-item" type = "submit" value = "Milk">
-			          <input class = "sub-menu menu-item" type = "submit" value = "White">
-			          <input class = "sub-menu menu-item" type = "submit" value = "Dark">
-			          <input class = "sub-menu menu-item" type = "submit" value = "Specialty">
+			          <input class = "sub-menu menu-item" type = "submit" value = "Sour">
+			          <input class = "sub-menu menu-item" type = "submit" value = "Sugar Free">
+			          <input class = "sub-menu menu-item" type = "submit" value = "Vintage">
+			          <input class = "sub-menu menu-item" type = "submit" value = "Novelty">
 			        </ul>
 			      </li>
 		    	</ul>
