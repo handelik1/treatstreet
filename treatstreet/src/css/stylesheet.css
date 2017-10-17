@@ -87,7 +87,7 @@ input[type=submit]{
 /*******Main area******/
 
 .main-background{
-	height: 40%;
+	height: 30%;
 	width: 100%;
 	background: black;
 }
@@ -99,5 +99,7 @@ input[type=submit]{
 	bottom: 40%;
 	color: black;
 	font-weight: bold;
-	pointer-events:none
+	pointer-events:none;
+	opacity: 0;
 }
+

@@ -16,7 +16,7 @@ $out .= '<nav class="navbar navbar-color navbar-edit">
 			          <input class = "sub-menu menu-item" type = "submit" value = "White">
 			          <input class = "sub-menu menu-item" type = "submit" value = "Dark">
 			          <input class = "sub-menu menu-item" type = "submit" value = "Specialty">
-			          <input class = "sub-menu menu-item" type = "submit" value = "Name-Brand">
+			          <input class = "sub-menu menu-item" type = "submit" value = "Name Brand">
 			        </ul>
 			      </li>
 			      <li class="dropdown">
