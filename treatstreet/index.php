@@ -46,7 +46,7 @@ $out .=					'<h2 class = "img4 img-caption">The Spooky Candy Collection</h2>';
 $out .=				'</div>';
 $out .=     	'</div>';
 
-$out .=		    '<input id = "candy-input-pic" type = "hidden" name = "candy" value = "all">';
+$out .=		    '<input id = "candy-input-pic" type = "hidden" name = "type" value = "all">';
 $out .=	      '</form>';
 
 

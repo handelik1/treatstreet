@@ -3,11 +3,11 @@
 $out .= '<nav class="navbar navbar-color navbar-edit">
 		  <div class="container-fluid">
 		    <div class="navbar-header">
-		      <a class="navbar-brand brand-color" href="#">Treat Street</a>
+		      <a href = "index.php" class="navbar-brand brand-color" href="#">Treat Street</a>
 		    </div>
 		      <form action = "results.php" method = "post">
 			    <ul class="nav navbar-nav">
-			      <li><a class = "home-button" href="#">Home</a></li>
+			      <li><a href = "index.php" class = "home-button" href="#">Home</a></li>
 			      <li class="dropdown">
 			        <input class = "main-menu-item menu-item" type = "submit" value = "Chocolate">
 			        <span class="caret"></span>
@@ -16,7 +16,6 @@ $out .= '<nav class="navbar navbar-color navbar-edit">
 			          <input class = "sub-menu menu-item" type = "submit" value = "White">
 			          <input class = "sub-menu menu-item" type = "submit" value = "Dark">
 			          <input class = "sub-menu menu-item" type = "submit" value = "Specialty">
-			          <input class = "sub-menu menu-item" type = "submit" value = "Name Brand">
 			        </ul>
 			      </li>
 			      <li class="dropdown">
@@ -24,9 +23,8 @@ $out .= '<nav class="navbar navbar-color navbar-edit">
 			        <span class="caret"></span>
 			        <ul class="dropdown-menu">
 			          <input class = "sub-menu menu-item" type = "submit" value = "Lollipops">
-			          <input class = "sub-menu menu-item" type = "submit" value = "Name Brand">
-			          <input class = "sub-menu menu-item" type = "submit" value = "Mints">
 			          <input class = "sub-menu menu-item" type = "submit" value = "Long-Lasting">
+			          <input class = "sub-menu menu-item" type = "submit" value = "Mints">
 			        </ul>
 			      </li>
 			      <li class="dropdown">
@@ -45,7 +43,7 @@ $out .= '<nav class="navbar navbar-color navbar-edit">
 			        <span class="caret"></span>
 			        <ul class="dropdown-menu">
 			          <input class = "sub-menu menu-item" type = "submit" value = "Christmas">
-			          <input class = "sub-menu menu-item" type = "submit" value = "Hannukah">
+			          <input class = "sub-menu menu-item" type = "submit" value = "Valentines">
 			          <input class = "sub-menu menu-item" type = "submit" value = "Thanksgiving">
 			          <input class = "sub-menu menu-item" type = "submit" value = "Halloween">
 			        </ul>
@@ -72,3 +70,12 @@ $out .= '<nav class="navbar navbar-color navbar-edit">
 
 ?>
 
+<script>
+	$(document).ready(function(){
+		$('.menu-item').click(function(){
+			var val = $(this).val();
+			var value = val.toLowerCase();
+			$('#candy-input').val(value)
+		});
+	});
+</script>
