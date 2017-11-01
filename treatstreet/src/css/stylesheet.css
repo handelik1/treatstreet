@@ -60,8 +60,9 @@ input[type=submit]{
 .home-button{
 	color: black;
 	font-weight: bold;
-	font-size: 1.3em;
+	font-size: 1.2em;
 	margin-right: 10px;
+	line-height: 17px !important;
 }
 .home-button:hover{
 	color: black;
@@ -87,9 +88,154 @@ input[type=submit]{
 }
 
 .main-menu-item{
-	font-size: 1.3em;
+	font-size: 1.2em;
 	margin-top: 12px;
 	margin-right: -5px;
+}
+
+/*******Register******/
+
+.credential-panel{
+    z-index: 30;
+    margin-top: 130px;
+    margin-left: 35%;
+    width: 30%;
+    height: 265px;
+    border-radius: 5px;
+}
+
+.credential-form{
+    background-color: #3d3dff;
+    border-radius: 5px;
+    margin-bottom: 0px !important;
+    box-shadow: 0px 0px 5px white;
+}
+
+.credential-label{
+    margin-left:5%;
+    margin-top: 7px;
+    margin-right: 5px;
+    font-size: 1.5em;
+    color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.reg-credential{
+    margin-left: 5%;
+    height: 10%;
+    width:90%;
+    border: 1px solid black;
+}
+
+#submit, .new-project-button{
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    margin-left: 42.5%;
+    width:75px;
+    height: 30px;
+    font-weight: bold;
+    text-shadow: none;
+    background-color: #3d3dff;
+    color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+    border-top: 1px solid gray;
+    border-left: 1px solid gray;
+}
+
+.register-button:hover, .register-button:focus, .register-button:onclick{
+    background-color: #CE1141 !important;
+    color: white !important;
+    border-bottom: 2px solid black !important;
+    border-right: 2px solid black !important;
+    border-top: 1px solid gray !important;
+    border-left: 1px solid gray !important;
+}
+
+.sign-in{
+    text-align: center;
+    color: white;
+    margin-bottom: 0px;
+    height: 50px;
+    line-height: 50px;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+/*******Login*********/
+
+.login-wrapper{
+    margin: auto;
+    margin-bottom: 7%;
+    text-align: center;
+    padding: 5% 0%;
+    background-color: #3d3dff;
+    width:65%;
+    height: 56%;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.treat-title{
+    color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+    font-size: 4.5em;
+    font-family: "Helvetica Condensed";
+}
+
+.credential-label-login{
+    margin-right: 5px;
+    font-size: 1.5em;
+    color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.password{
+    margin-left: 2px;
+}
+
+#password{  
+    margin-left: 3px;
+}
+
+.account-button, #login-button{
+    text-align: center;
+    font-size: 1.5em;
+    width: 15%;
+    height: 15%;
+    line-height: 1px;
+    background-color: #3d3dff;
+    color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+    border-top: 1px solid gray;
+    border-left: 1px solid gray;
+    margin:  3.5% 5.5%;
 }
 
 /*******Main area******/
@@ -158,4 +304,37 @@ input[type=submit]{
 
 .image-wrapper{
 	text-align: center;
+}
+
+/*********New Product**********/
+
+.new_product_input{
+    width: 100%;
+}
+
+.new_product_label{
+    font-size: 1.2em;
+}
+
+.add_product_form{
+    margin-top: 3%;
+}
+
+.sub-type-wrapper{
+	overflow-y: auto;
+	height: 16%;
+}
+
+.new_product_button{
+	margin-top: 36% !important;
+	width: 50% !important;
+	margin-left: 25% !important;
+}
+
+.image-upload{
+	margin-top: 29%;
+}
+
+input[type=checkbox]{
+	margin-right: 5px;
 }

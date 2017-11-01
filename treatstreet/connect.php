@@ -1,15 +1,15 @@
 <?php 
 
-  $username = "test_user";
-  $password = "password";
+  $username = "handelik_test";
+  $password = "handelik_Test!";
   $host = "localhost";
   $dbname = "treatstreet";
 
-  $con = mysqli_connect($host,$username,$password,$dbname);
+  $con = new mysqli($host, $username, $password, $dbname);
 
-  if (!$con)
-  {
-    die('Could not connect: ' . mysqli_error());
-  }
+// Check connection
+if ($con->connect_error) {
+ die("Connection failed: " . $conn->connect_error);
+} 
 
  ?>

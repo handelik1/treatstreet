@@ -1,5 +1,5 @@
 <?php
-
+require('connect.php');
 $out .= '<nav class="navbar navbar-color navbar-edit">
 		  <div class="container-fluid">
 		    <div class="navbar-header">
@@ -60,11 +60,24 @@ $out .= '<nav class="navbar navbar-color navbar-edit">
 			      </li>
 		    	</ul>
 		       <input id = "candy-input" type = "hidden" name = "candy" value = "all">
-		    <ul class="nav navbar-nav navbar-right">
-		      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-		      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-		    </ul>
-		</form>
+		    <ul class="nav navbar-nav navbar-right">';
+if(!isset($_SESSION['user'])){
+$out .=		 '<li data-toggle="modal" data-target="#register-modal"><a href="#" ><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>';
+}
+if(isset($_SESSION['user'])){
+$user = $_SESSION['user'];
+$loggedQuery = mysqli_query($con, "select user_type from users where username = '$user'");
+$user = mysqli_fetch_row($loggedQuery);
+}
+ if(isset($_SESSION['user']) && $user[0] == 'admin'){
+$out .=		 '<li><a href="admin.php" class = "admin-link"><span class="glyphicon glyphicon-dashboard"></span> Admin</a></li>';
+		}
+if(isset($_SESSION['user'])){
+$out .=		 '<li><a href="shopping-cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>';
+$out .=		 '<li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>';
+		}
+$out .=		 '</ul>
+			</form>
 		  </div>
 		</nav>';
 
@@ -79,3 +92,5 @@ $out .= '<nav class="navbar navbar-color navbar-edit">
 		});
 	});
 </script>
+
+
