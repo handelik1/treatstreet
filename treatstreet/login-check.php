@@ -20,14 +20,13 @@ session_start();
 		$_SESSION['user'] = $username;
 	
 	echo "<script>window.location = 'index.php'</script>";
-
+	mysqli_close($con); 
 	}
 	else {
 	echo '<script>alert("Wrong username or password!")</script>';
 	echo '<script>window.history.back();</script>';
+	mysqli_close($con); 
 	}
 	
-	
-	      mysqli_close($con); 
 ?>
 

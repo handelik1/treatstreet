@@ -28,9 +28,13 @@ if(isset($_POST['candy'])){
 
 $candy = mysqli_real_escape_string($con,$_POST['candy']);
 
-$candyQuery = mysqli_query($con, "select * from candy where id = (select tid from types where type = '$candy')");
+$candyQuery = mysqli_query($con, "select tid from types where type = '$candy'");
+
 	if(mysqli_num_rows($candyQuery) > 0){
 		foreach($candyQuery as $key => $value){
+			$id = $value['tid'];
+			$candyQuery = mysqli_query($con, "select * from candy where id = $id");
+			$value = mysqli_fetch_assoc($candyQuery);
 			if($value['inventory'] > 0){
 
 				$out .= 		'<div class="row">';
@@ -57,15 +61,6 @@ $candyQuery = mysqli_query($con, "select * from candy where id = (select tid fro
 				$out .=				'</div>';
 				$out .=     	'</div>';
 				$out .=			  '<hr class = "product-break">';
-			}
-			else{
-				$out .= 		'<div class="row">';
-				$out .=		    	'<div class="col-md-12">';
-				$out .=				  '<div class = "no-results-wrapper">';
-				$out .=					'<h1 class = "candy">No Results</h1>';
-				$out .=				  '</div>';
-				$out .=				'</div>';
-				$out .=     	'</div>';
 			}
 		}		
 	}
@@ -94,6 +89,9 @@ $out .= 	'</div>';
 $out .= '</body>';
 
 echo $out;
+
+mysqli_close($con);
+
 	
 require('footer.html');
 

@@ -48,7 +48,7 @@ $out .= 				'<input type="checkbox" name="type_list[]" value="chocolate"><label 
 						 <input type="checkbox" name="type_list[]" value="holiday"><label class = "new_product_label">Holiday</label><br>';
 $out .=				'<label class = "new_product_label image-upload">Image (.jpg, .jpeg, or .png)</label>';
 $out .= 				'<input type="hidden" name="MAX_FILE_SIZE" value="200000000">';
-$out .= 				'<input type="file" class = "image-upload-button" name="new_image" accept=".jpg, .jpeg, .png" required>';
+$out .= 				'<input type="file" class = "image-upload-button" name="new_image" accept=".png" required>';
 $out .=			   '</div>';
 
 $out .=			   '<div class="col-md-6">';
