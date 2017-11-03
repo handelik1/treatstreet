@@ -11,7 +11,7 @@
 	$epass = hash('sha512', $username.$password);
 	$time = time();
 
-	$userQuery = mysqli_query($con, "insert into users (username, password, created, firstname, lastname, email, user_type) values ('$username','$epass', '$time', '$firstname', '$lastname', '$email', 'authenticated user')");
+	$userQuery = mysqli_query($con, "insert into users (username, password, created, firstname, lastname, phone, address, email, user_type) values ('$username','$epass', '$time', '$firstname', '$lastname', '$phone', '$address', '$email', 'authenticated user')");
 
 	mysqli_close($con);
 	echo "<script>window.location = 'index.php'</script>";

@@ -45,24 +45,31 @@ $out .=     	'</div>';
 	     																#  Registration modal
 	$out .=     '<div class="modal fade" id="register-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">';
 	$out .=       '<div class="credential-panel" id="reg-panel">';
-	$out .=         '<form onsubmit="return validateMyForm();" class="credential-form" id="reg-form" action = "register.php" method="post">';
+	$out .=         '<form onsubmit="return (validateMyForm() && checkPwd())" class="credential-form" id="reg-form" action = "register.php" method="post">';
 	$out .=           '<h2 class="sign-in">Registration</h2>';
-	$out .=           '<label class="credential-label" >First Name</label>';
-	$out .=           '<input class="reg-credential" name="firstname" id="firstname" type="text">';
-	$out .=           '<label class="credential-label">Last Name</label>';
-	$out .=           '<input class="reg-credential" name="lastname" id="lastname" type="text">';
-	$out .=           '<label class="credential-label">Phone Number</label>';
-	$out .=           '<input class="reg-credential" name="phone" id="phone" type="text">';
-	$out .=           '<label class="credential-label">Address</label>';
-	$out .=           '<input class="reg-credential" name="address" id="address" type="text">';
-	$out .=           '<label class="credential-label">Email Address</label>';
-	$out .=           '<input class="reg-credential" name="email" id="email" type="text">';
-	$out .=           '<label class="credential-label">User Name</label>';
-	$out .=           '<input class="reg-credential" name="username" id="username" type="text">';
-	$out .=           '<label class="credential-label">Password</label>';
-	$out .=           '<input class="reg-credential" name="password" id="pass" name="password" type="password">';
-	$out .=           '<label class="credential-label">Confirm Password</label>';
-	$out .=           '<input class="reg-credential" id="confirmpassword" type="password">';
+
+	$out .=				'<div class = "row">';
+	$out .=				  '<div class = "col-md-6">';
+	$out .=           		'<label class="credential-label" >First Name</label>';
+	$out .=           		'<input class="reg-credential" name="firstname" id="firstname" type="text" required>';
+	$out .=           		'<label class="credential-label">Last Name</label>';
+	$out .=           		'<input class="reg-credential" name="lastname" id="lastname" type="text" required>';
+	$out .=           		'<label class="credential-label">Phone Number</label><span class = "requirement">(555-555-5555)</span>';
+	$out .=           		'<input class="reg-credential" name="phone" id="phone" type="text" required>';
+	$out .=           		'<label class="credential-label">Address</label><span class = "requirement">(# Street, City, State, Zip)</span>';
+	$out .=           		'<input class="reg-credential" name="address" id="address" type="text" required>';
+	$out .= 			  '</div>';
+	$out .=				  '<div class = "col-md-6">';
+	$out .=           		'<label class="credential-label">Email Address</label>';
+	$out .=           		'<input class="reg-credential" name="email" id="email" type="text" required>';
+	$out .=           		'<label class="credential-label">User Name</label>';
+	$out .=           		'<input class="reg-credential" name="username" id="username" type="text" required>';
+	$out .=           		'<label class="credential-label">Password</label><span class = "requirement">(Min 8 characters, 1 letter, 1 number)</span>';
+	$out .=           		'<input class="reg-credential" name="password" id="pass" name="password" type="password" required>';
+	$out .=           		'<label class="credential-label">Confirm Password</label>';
+	$out .=           		'<input class="reg-credential" id="confirmpassword" type="password" required>';
+	$out .= 			  '</div>';
+	$out .=				'</div>';
 	$out .=           '<input type="submit" id = "submit" class="register-button" value="Submit" ">';
 	$out .=         '</form>';
 	$out .=       '</div>';
@@ -222,8 +229,6 @@ function validateMyForm()
     alert("Password and confirm password do not match.");
     return false;
   }
-
-  alert("Thank you for registering. Please login with your username and password.");
   return true;
 }
 </script>
@@ -247,4 +252,46 @@ function validate() {
 }
 
 $("#submit").bind("click", validate);
+</script>
+
+<script>
+function validatePhone(phone) {
+  var phoneregex = /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/;
+  return phoneregex.test(phone);
+}
+
+function validate() {
+  var phone = $("#phone").val();
+  if (validatePhone(phone)) {
+  	return true;
+  } 
+  else {
+   alert("Phone number not valid.");
+    return false;
+  }
+
+}
+
+$("#submit").bind("click", validate);
+</script>
+
+<script>
+function checkPwd() {
+	var str = document.getElementById('pass').value;
+    if (str.length < 8) {
+        alert("Password is too short");
+        return false;
+    } else if (str.search(/\d/) == -1) {
+        alert("Password must contain at least 1 number");
+        return false;
+    } else if (str.search(/[a-zA-Z]/) == -1) {
+        alert("Password must contain at least 1 letter");
+        return false;
+    }
+    else{
+    alert("Thank you for registering. Please login with your username and password.");
+    return true;
+	}
+}
+
 </script>
