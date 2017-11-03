@@ -53,10 +53,9 @@ else{
 }
 
 $cartQuery = mysqli_query($con, "select * from cart where cartID = '$user'");
-$cart = mysqli_fetch_row($cartQuery);
 
 $count= mysqli_num_rows($cartQuery);
-
+	$c = 0;
 	if($count > 0){
 		$out .=		'<div class = "cart-wrapper">';
 		foreach($cartQuery as $key => $value){
@@ -72,7 +71,7 @@ $count= mysqli_num_rows($cartQuery);
 			$out .=				'</div>';
 
 			$out .=		    	'<div class="col-md-7">';
-			$out .=				   '<form onsubmit = "return sure()" id = "remove_from_cart" action = "update_cart.php" method = "post">';
+			$out .=				   '<form onsubmit = "return sure()" id = "remove_from_cart'.$c.'" action = "update_cart.php" method = "post">';
 			$out .=				      '<input type = "hidden" name = "remove">';
 									//item id
 			$out .=				      '<input type = "hidden" name = "item_id" value = '.$cartItem['0'].'>';
@@ -88,31 +87,28 @@ $price = number_format(round($price, 2),2);
 			$out .=		    	'<div class="col-md-3">';
 			$out .=					'<div class = "row">';
 
-			$out .=						'<div class = "col-md-5">';
+			$out .=						'<div class = "col-md-6">';
 			$out .=							'<h4 class = "candy" id ="quantity">Quantity: '.$value['quantity'].'</h4>';
 											//price
 			$out .=							'<h4 class = "candy">$'.$price.'</h4>';
 			$out .=						'</div>';
 
-			$out .=						'<div class = "col-md-2">';
-			$out .=				   			'<form onsubmit = "return checkNumber()" id = "update" action = "update_cart.php" method = "post">';
+			$out .=						'<div class = "col-md-6">';
+			$out .=				   			'<form onsubmit = "return checkNumber()" id = "update'.$c.'" action = "update_cart.php" method = "post">';
 			$out .=				      			 '<input type = "hidden" name = "update">';
 													//item id
 			$out .=				     			 '<input type = "hidden" name = "item_id" value = '.$cartItem['0'].'>';
 			$out .=							     '<input class = "quantity-text" id = "quantity_box" name = "quantity" size = "2" type = "text">';
+			$out .=								'<input class = "cart-button" id = "update'.$c.'" form = "update'.$c.'" type = "submit" name = "submit" value = "Update">';
 			$out .=				   			'</form>';
-			$out .=						'</div>';
-
-			$out .=						'<div class = "col-md-5">';
-			$out .=							'<input class = "cart-button" form = "update" type = "submit" name = "submit" value = "Update">';
-			$out .=							'<input class = "cart-button" form = "remove_from_cart" type = "submit" name = "submit" value = "Remove">';
+			$out .=							'<input class = "cart-button" form = "remove_from_cart'.$c.'" type = "submit" name = "submit" value = "Remove">';
 			$out .=						'</div>';
 			$out .=					'</div>';
 $total += $price;
 			$out .=				'</div>';
 			$out .=     	'</div>';
 			$out .=			  '<hr class = "product-break">';
-
+			$c++;
 		}
 			$out .=		'</div>';
 $subtotal = number_format(round($total,2),2);
@@ -166,16 +162,18 @@ function sure(){
 </script>
 
 <script>
-function checkNumber(){
-  var quantity = document.getElementById('quantity_box').value;
-  if(isNaN(quantity) || quantity == null || quantity == '' || quantity < 1 || quantity % 1 != 0){
-  	alert("Please enter a valid number");
-  	return false;
-  }
-  else{
-  	return true;
-  }
+	$(document).ready(function(){
+		$("input[id^='update']" ).click(function(){
+			var quantity = $(this).prev().val();
+			 if(isNaN(quantity) || quantity == null || quantity == '' || quantity < 1 || quantity % 1 != 0){
+			  	alert("Please enter a valid number");
+			  	return false;
+			  }
+			  else{
+			  	return true;
+			  }
+		});
+	});
 
-}
 
 </script>

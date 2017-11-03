@@ -9,17 +9,19 @@ session_start();
 	  	$item_id = mysqli_real_escape_string($con,$_POST['item_id']);
 	  	$item_id = (int)$item_id;
 		$deleteQuery = mysqli_query($con, "delete from cart where item = $item_id and cartId = (select id from users where username = '$user')");
+		mysqli_close($con);
 	}
-	else{
+	else if(isset($_POST['update'])){
+
 		$user = $_SESSION['user'];
 	  	$item_id = mysqli_real_escape_string($con,$_POST['item_id']);
 	  	$item_id = (int)$item_id;
 	  	$quantity = mysqli_real_escape_string($con,$_POST['quantity']);
 	  	$quantity = (int)$quantity;
 		$updateQuery = mysqli_query($con, "update cart set quantity = $quantity where item = $item_id and cartId = (select id from users where username = '$user')");
+		mysqli_close($con);
 	}
 
-	mysqli_close($con);
 	echo "<script>window.location = 'shopping-cart.php'</script>";
 
 ?>

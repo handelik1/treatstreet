@@ -51,7 +51,7 @@ $candyQuery = mysqli_query($con, "select tid from types where type = '$candy'");
 				$out .=				'</div>';
 
 				$out .=		    	'<div class="col-md-2">';
-				$out .=				  '<div class = "cart-wrapper">';
+				$out .=				  '<div class = "result-wrapper">';
 				$out .=					'<h4 class = "candy">$'.$value['price'].'</h4>';
 				$out .=					'<form action = "shopping-cart.php" method = "post">';
 				$out .=						'<input name = "add-candy" type = "hidden" value = '.$value['id'].'</input>';
