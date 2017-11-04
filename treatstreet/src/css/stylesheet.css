@@ -10,12 +10,12 @@ footer {
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 1rem;
+  padding: 0rem;
 
 }
 
 .copyright{
-	margin-bottom: 0px !important;
+	margin: 0px 0px !important;
 }
 
 /********Navbar********/
@@ -267,7 +267,7 @@ input[type=submit]{
 }
 
 
-/*****Results******/
+/*****Results and Cart******/
 
 .product-image{
 	width: 150px;
@@ -281,7 +281,7 @@ input[type=submit]{
 .cart-wrapper{
 	overflow-y: auto;
 	overflow-x: hidden;
-	height: 45%;
+	height: 42%;
 }
 
 .add-to-cart{
@@ -336,6 +336,7 @@ input[type=submit]{
 .quantity-text{
 	margin-top: 10%;
 	position: relative;
+	width: 90%;
 }
 
 #quantity{
@@ -352,6 +353,38 @@ input[type=submit]{
 	color: white !important;
 	font-size: 1em;
 }
+
+.checkout-button{
+	width: 60%;
+	height: 4%;
+	border-radius: 5px;
+	background-color: #1ac4f8 !important;
+	border-color: #2e6da4;
+	color: white !important;
+	font-size: 1em;
+	float: right;
+}
+
+
+/*Partial wrapper*/
+.result-wrapper{
+	bottom: 0;
+}
+
+.full-results-wrapper{
+	overflow-y: auto;
+	overflow-x: hidden;
+	height: 58%;
+	margin-bottom: 20px;
+}
+
+.add-to-cart-form{
+	margin-bottom: 0px !important;
+}
+
+#item-price{
+	margin-top: 40px;
+}
 /*********New Product**********/
 
 .new_product_input{
@@ -364,6 +397,7 @@ input[type=submit]{
 
 .add_product_form{
     margin-top: 3%;
+    padding-bottom: 15px;
 }
 
 .sub-type-wrapper{

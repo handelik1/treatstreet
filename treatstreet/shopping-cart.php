@@ -61,12 +61,12 @@ $count= mysqli_num_rows($cartQuery);
 		foreach($cartQuery as $key => $value){
 			$itemNumber = $value['item'];
 			$cartItemQuery = mysqli_query($con, "select * from candy where id = '$itemNumber'");
-			$cartItem = mysqli_fetch_row($cartItemQuery);
+			$cartItem = mysqli_fetch_assoc($cartItemQuery);
 			$out .= 		'<div class="row">';
 			$out .=		    	'<div class="col-md-2">';
 			$out .=				  '<div class = "image-wrapper">';
 									//image
-			$out .=					'<img class = "product-image" src = "src/img/'.$cartItem['5'].'">';
+			$out .=					'<img class = "product-image" src = "src/img/'.$cartItem['image'].'">';
 			$out .=				  '</div>';
 			$out .=				'</div>';
 
@@ -74,15 +74,17 @@ $count= mysqli_num_rows($cartQuery);
 			$out .=				   '<form onsubmit = "return sure()" id = "remove_from_cart'.$c.'" action = "update_cart.php" method = "post">';
 			$out .=				      '<input type = "hidden" name = "remove">';
 									//item id
-			$out .=				      '<input type = "hidden" name = "item_id" value = '.$cartItem['0'].'>';
+			$out .=				      '<input type = "hidden" name = "item_id" value = '.$cartItem['id'].'>';
 			$out .=				   '</form>';
 									//name
-			$out .=					'<h4 class = "candy">'.$cartItem['1'].'</h4>';
+			$out .=					'<h4 class = "candy">'.$cartItem['name'].'</h4>';
+									//price
+			$out .=					'<h5 class = "candy">Unit Price: $'.$cartItem['price'].'</h5>';
 									//description
-			$out .=					'<p class = "candy">'.$cartItem['3'].'</p>';
+			$out .=					'<p class = "candy">'.$cartItem['description'].'</p>';
 			$out .=				'</div>';
 
-$price = floatval($value['quantity']) * floatval($cartItem['2']);
+$price = floatval($value['quantity']) * floatval($cartItem['price']);
 $price = number_format(round($price, 2),2);
 			$out .=		    	'<div class="col-md-3">';
 			$out .=					'<div class = "row">';
@@ -97,8 +99,8 @@ $price = number_format(round($price, 2),2);
 			$out .=				   			'<form onsubmit = "return checkNumber()" id = "update'.$c.'" action = "update_cart.php" method = "post">';
 			$out .=				      			 '<input type = "hidden" name = "update">';
 													//item id
-			$out .=				     			 '<input type = "hidden" name = "item_id" value = '.$cartItem['0'].'>';
-			$out .=							     '<input class = "quantity-text" id = "quantity_box" name = "quantity" size = "2" type = "text">';
+			$out .=				     			 '<input type = "hidden" name = "item_id" value = '.$cartItem['id'].'>';
+			$out .=							     '<input class = "quantity-text" id = "quantity_box" name = "quantity" size = "2" type = "text" placeholder = "New Quantity">';
 			$out .=								'<input class = "cart-button" id = "update'.$c.'" form = "update'.$c.'" type = "submit" name = "submit" value = "Update">';
 			$out .=				   			'</form>';
 			$out .=							'<input class = "cart-button" form = "remove_from_cart'.$c.'" type = "submit" name = "submit" value = "Remove">';
@@ -114,10 +116,11 @@ $total += $price;
 $subtotal = number_format(round($total,2),2);
 $tax = number_format(round($total * .06875,2),2);
 $total = number_format(round($total + $tax,2),2);
-			$out .=				'<div class = "pull-right">';
+			$out .=				'<div class = "pull-right totals">';
 			$out .=					'<h4 class = "candy text-right">Subtotal: $'.$subtotal.'</h4>';
 			$out .=					'<h4 class = "candy text-right">Tax: $'.$tax.'</h4>';
 			$out .=					'<h4 class = "candy text-right">Total: $'.$total.'</h4>';
+			$out .=					'<input class = "text-right checkout-button" type = "submit" name = "submit" value = "Checkout">';
 			$out .=				'</div>';
 	}		
 	else{

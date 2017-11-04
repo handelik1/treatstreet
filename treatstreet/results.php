@@ -31,12 +31,12 @@ $candy = mysqli_real_escape_string($con,$_POST['candy']);
 $candyQuery = mysqli_query($con, "select tid from types where type = '$candy'");
 
 	if(mysqli_num_rows($candyQuery) > 0){
+			$out .=		'<div class = "full-results-wrapper">';
 		foreach($candyQuery as $key => $value){
 			$id = $value['tid'];
 			$candyQuery = mysqli_query($con, "select * from candy where id = $id");
 			$value = mysqli_fetch_assoc($candyQuery);
 			if($value['inventory'] > 0){
-
 				$out .= 		'<div class="row">';
 				$out .=		    	'<div class="col-md-2">';
 				$out .=				  '<div class = "image-wrapper">';
@@ -52,8 +52,8 @@ $candyQuery = mysqli_query($con, "select tid from types where type = '$candy'");
 
 				$out .=		    	'<div class="col-md-2">';
 				$out .=				  '<div class = "result-wrapper">';
-				$out .=					'<h4 class = "candy">$'.$value['price'].'</h4>';
-				$out .=					'<form action = "shopping-cart.php" method = "post">';
+				$out .=					'<h4 class = "candy" id = "item-price">$'.$value['price'].' each</h4>';
+				$out .=					'<form class = "add-to-cart-form" action = "shopping-cart.php" method = "post">';
 				$out .=						'<input name = "add-candy" type = "hidden" value = '.$value['id'].'</input>';
 				$out .=						'<input class = "add-to-cart btn" type = "submit" value = "Add to Cart"></input>';
 				$out .=					'</form>';
@@ -62,7 +62,8 @@ $candyQuery = mysqli_query($con, "select tid from types where type = '$candy'");
 				$out .=     	'</div>';
 				$out .=			  '<hr class = "product-break">';
 			}
-		}		
+		}	
+				$out .=		'</div>';	
 	}
 	else{
 		$out .= 		'<div class="row">';
