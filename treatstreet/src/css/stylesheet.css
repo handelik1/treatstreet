@@ -521,3 +521,25 @@ input[type=checkbox]{
 .admin-body{
 	overflow-y: hidden;
 }
+
+/********Orders*********/
+
+.address-phone-email{
+	margin-left: 15px;
+}
+
+.order-list{
+	margin-left: 10px;
+}
+
+.order-total{
+	font-size: 2em;
+	margin-left: 15px;
+}
+
+.admin-orders-wrapper{
+	height: 43%;
+	overflow-y: auto;
+	overflow-x: hidden;
+	margin-bottom: 15px;
+}
