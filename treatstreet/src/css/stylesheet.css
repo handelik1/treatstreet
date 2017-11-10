@@ -187,7 +187,7 @@ input[type=submit]{
 
 .login-wrapper{
     margin: auto;
-    margin-bottom: 7%;
+    margin-bottom: 4%;
     text-align: center;
     padding: 5% 0%;
     background-color: #3d3dff;
@@ -481,4 +481,43 @@ input[type=checkbox]{
 
 #item-name, #checkout-item-quantity{
 	display: none;
+}
+
+/*******Admin******/
+
+.admin-card{
+	box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
+	height: 60%;
+	margin-bottom: 2%;
+}
+
+.profit-img{
+	width: 100%;
+	height: 100%;
+}
+
+.profit{
+
+	font-size: 3.5em;
+	color: black;
+	width: 46.5%;
+	height: 36%;
+	padding-top: 30px;
+	padding-bottom: 20px;
+	background-color: white;
+	border-radius: 80%;
+	background-color: white;
+	cursor: default;
+}
+
+.profit-wrapper{
+	position: relative;
+	bottom: 320px;
+	text-align: center;
+	width: 100%;
+	margin-left: 27%;
+}
+
+.admin-body{
+	overflow-y: hidden;
 }
