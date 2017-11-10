@@ -50,6 +50,8 @@ else{
 	$addQuery = mysqli_query($con, "insert into cart (cartId, item, quantity) values ('$user', '$item', 1) ");
 }
 
+echo "<script>window.location = 'shopping-cart.php'</script>";
+
 }
 
 $cartQuery = mysqli_query($con, "select * from cart where cartID = '$user'");
@@ -120,8 +122,41 @@ $total = number_format(round($total + $tax,2),2);
 			$out .=					'<h4 class = "candy text-right">Subtotal: $'.$subtotal.'</h4>';
 			$out .=					'<h4 class = "candy text-right">Tax: $'.$tax.'</h4>';
 			$out .=					'<h4 class = "candy text-right">Total: $'.$total.'</h4>';
-			$out .=					'<input class = "text-right checkout-button" type = "submit" name = "submit" value = "Checkout">';
+			$out .=					'<input data-toggle="modal" data-target="#checkout-modal" class = "text-center checkout-button" type = "button" value = "Checkout">';
 			$out .=				'</div>';
+
+			$out .=     '<div class="modal fade" id="checkout-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">';
+			$out .=       '<div class="checkout-panel" id="reg-panel">';
+			$out .=         '<form onsubmit="" class="checkout-form" id="reg-form" action = "checkout.php" method="post">';
+			$out .=           '<h2 class="checkout-header text-center">Checkout</h2>';
+			$out .=           	'<h3 class="checkout-label pull-left" >Item</h3>';
+			$out .=           	'<h3 class="checkout-label pull-right" >Quantity</h3><br><br>';
+			$out .=				  	'<div class = "checkout-wrapper">';
+		foreach($cartQuery as $key => $value){
+			$itemNumber = $value['item'];
+			$cartItemQuery = mysqli_query($con, "select * from candy where id = '$itemNumber'");
+			$cartItem = mysqli_fetch_assoc($cartItemQuery);
+
+			$out .=				'<div class = "row">';
+			$out .=				  '<div class = "col-md-12">';
+			$out .=						'<h4 class = "checkout-item">'.$cartItem['name'].'</h5>';
+			$out .=           			'<input name="item[]" id="item-name" type = "checkbox" value = "'.$cartItem['name'].'" checked>';
+			$out .=						'<h4 id = "item-quantity" class = "checkout-item pull-right">'.$value['quantity'].'</h5>';
+			$out .=           			'<input name="quantity[]" id="checkout-item-quantity" type = "checkbox" value = "'.$value['quantity'].'" checked>';
+			$out .= 			  	'</div>';			
+			$out .= 			  '</div>';
+		}
+			$out .=				'</div>';
+
+			$out .=			 		'<hr class = "product-break">';
+			$out .=					'<h4 class = "candy text-right">Total: $'.$total.'</h4>';
+			$out .=           		'<input name="total" id="total" type = "hidden" value = "'.$total.'">';
+			$out .=           		'<input name="user" id="total" type = "hidden" value = "'.$user.'">';
+			$out .=           '<input type="submit" id = "submit" class="checkout-submit" value="Submit Order" ">';
+			$out .=         '</form>';
+			$out .=       '</div>';
+			$out .=     '</div>';
+
 	}		
 	else{
 			$out .= 		'<div class="row">';

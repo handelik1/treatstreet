@@ -18,7 +18,7 @@ session_start();
 	//checks if row is queried
 	if($count==1){
 		$_SESSION['user'] = $username;
-	
+		
 	echo "<script>window.location = 'index.php'</script>";
 	mysqli_close($con); 
 	}
@@ -27,6 +27,7 @@ session_start();
 	echo '<script>window.history.back();</script>';
 	mysqli_close($con); 
 	}
+
 	
 ?>
 

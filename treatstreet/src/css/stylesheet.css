@@ -135,7 +135,7 @@ input[type=submit]{
     border: 1px solid black;
 }
 
-#submit, .new-project-button{
+#submit, .new-project-button, .checkout-submit{
     margin-top: 2.5%;
     margin-bottom: 2.5%;
     margin-left: 42.5%;
@@ -355,7 +355,7 @@ input[type=submit]{
 }
 
 .checkout-button{
-	width: 60%;
+	width: 66%;
 	height: 4%;
 	border-radius: 5px;
 	background-color: #1ac4f8 !important;
@@ -417,4 +417,68 @@ input[type=submit]{
 
 input[type=checkbox]{
 	margin-right: 5px;
+}
+
+/******Checkout******/
+
+.checkout-panel{
+    z-index: 30;
+    margin-top: 170px;
+    margin-left: 35%;
+    width: 30%;
+    height: 265px;
+    border-radius: 5px;
+}
+
+.checkout-form{
+    background-color: white;
+    border-radius: 5px;
+    margin-bottom: 0px !important;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.checkout-label{
+    margin-top: 7px;
+    margin-right: 5px;
+    font-size: 1.5em;
+    color: black;
+    display: inline-block;
+    text-decoration: underline;
+    color: black;
+}
+
+.checkout-header{
+
+    color: black;
+    margin-bottom: 0px;
+    height: 50px;
+    line-height: 50px;
+
+}
+.checkout-item{
+	display: inline-block;
+	color: black;
+}
+
+#item-quantity{
+	padding-right: 6%;
+}
+
+.checkout-submit{
+	width: 30% !important;
+	margin-left: 36.5% !important;
+	margin-bottom: 15px !important;
+}
+
+.checkout-wrapper{
+	overflow-y: auto;
+	overflow-x: hidden;
+	width: 100%;
+	height: 50%; 
+	max-height: 50%;
+}
+
+#item-name, #checkout-item-quantity{
+	display: none;
 }
