@@ -80,24 +80,25 @@ else{
 $out .=		  '<form action = "results.php" method = "post">';
 $out .= 		'<div class="row">';
 $out .=		    	'<div class="col-md-6">';
-$out .=					'<input type = "image" name = "candy" class = "main-background main-background1" src = "src/img/main2.jpg" value = "christmas">';
+
+$out .=					'<button type="submit" class = "background-img main-background1" name = "candy" value = "Christmas"><img class = "main-background main-background1" src = "src/img/main2.jpg" alt="Christmas"></button>';
 $out .=					'<h2 class = "img1 img-caption">Get Your Christmas Treats</h2>';
 $out .=				'</div>';
 
 $out .=		    	'<div class="col-md-6">';
-$out .=					'<input type = "image" name = "candy"  class = "main-background main-background2" src = "src/img/main.jpg" value = "valentines">';
+$out .=					'<button type="submit" class = "background-img main-background2" name = "candy" value = "Valentines"><img class = "main-background main-background2" src = "src/img/main.jpg" alt="Valentines"></button>';
 $out .=					'<h2 class = "img2 img-caption">Sweet Candies For Your Sweetheart</h2>';
 $out .=				'</div>';
 $out .=     	'</div><br>';
 
 $out .= 		'<div class="row">';
 $out .=		    	'<div class="col-md-6">';
-$out .=					'<input type = "image" name = "candy"  class = "main-background main-background3" src = "src/img/main3.jpg" value = "thanksgiving">';
+$out .=					'<button type="submit" class = "background-img main-background3" name = "candy" value = "Thanksgiving"><img class = "main-background main-background3" src = "src/img/main3.jpg" alt="Thanksgiving"></button>';
 $out .=					'<h2 class = "img3 img-caption">Gobble Gobble Gobble</h2>';
 $out .=				'</div>';
 
 $out .=		    	'<div class="col-md-6">';
-$out .=					'<input type = "image" name = "candy"  class = "main-background main-background4" src = "src/img/main4.jpg" value = "halloween">';
+$out .=					'<button type="submit" class = "background-img main-background4" name = "candy" value = "Halloween"><img class = "background4 main-background main-background4" src = "src/img/main4.jpg" alt="Halloween"></button>';
 $out .=					'<h2 class = "img4 img-caption">The Spooky Candy Collection</h2>';
 $out .=				'</div>';
 $out .=     	'</div>';

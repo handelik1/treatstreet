@@ -97,6 +97,10 @@ input[type=submit]{
 	margin-right: -5px;
 }
 
+.menu-item:hover{
+	cursor: pointer;
+}
+
 /*******Register******/
 
 .credential-panel{
@@ -253,6 +257,20 @@ input[type=submit]{
 	height: 40%;
 	width: 100%;
 	background: black;
+}
+
+.main-background4{
+	height: 54%;
+
+}
+.background4{
+	height: 100%;
+}
+
+.background-img{
+	background-color: none;
+	border:none;
+	padding: 0px;
 }
 .img-caption{
 	width: 95%;
