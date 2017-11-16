@@ -413,9 +413,13 @@ input[type=submit]{
     font-size: 1.2em;
 }
 
+.new_product_label_title{
+   text-decoration: underline;
+}
+
 .add_product_form{
     margin-top: 3%;
-    padding-bottom: 15px;
+    padding-bottom: 60px;
 }
 
 .sub-type-wrapper{

@@ -41,7 +41,7 @@ $out .=			'<div class="col-md-6">';
 $out .=			 '<div class = "row">';
 
 $out .=			   '<div class="col-md-6">';
-$out .=				'<label class = "new_product_label">Main Type</label><br><br>';
+$out .=				'<label class = "new_product_label new_product_label_title">Main Type</label><br><br>';
 $out .= 				'<input type="checkbox" name="type_list[]" value="chocolate"><label class = "new_product_label">Chocolate</label><br>
 						 <input type="checkbox" name="type_list[]" value="hard candy"><label class = "new_product_label">Hard Candy</label><br>
 						 <input type="checkbox" name="type_list[]" value="chewy"><label class = "new_product_label">Chewy</label><br>
@@ -52,7 +52,7 @@ $out .= 				'<input type="file" class = "image-upload-button" name="new_image" a
 $out .=			   '</div>';
 
 $out .=			   '<div class="col-md-6">';
-$out .=				'<label class = "new_product_label">Sub Type</label></br><br>';
+$out .=				'<label class = "new_product_label new_product_label_title">Subtype</label></br><br>';
 $out .=				  '<div class = "sub-type-wrapper">';
 $out .= 				'<input class = "new_product_label" type="checkbox" name="type_list[]" value="milk"><label class = "new_product_label">Milk</label><br>
 						 <input type="checkbox" name="type_list[]" value="white"><label class = "new_product_label">White</label><br>
