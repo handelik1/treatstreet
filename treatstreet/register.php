@@ -1,13 +1,13 @@
 <?php
 	require('connect.php');
 
-  	$firstname = mysqli_real_escape_string($con,$_POST['firstname']);
-	$lastname = mysqli_real_escape_string($con,$_POST['lastname']);
-  	$email = mysqli_real_escape_string($con,$_POST['email']);
-  	$phone = mysqli_real_escape_string($con,$_POST['phone']);
-  	$address = mysqli_real_escape_string($con,$_POST['address']);
-  	$username = mysqli_real_escape_string($con,$_POST['username']);
-	$password = mysqli_real_escape_string($con,$_POST['password']);
+  	$firstname = strip_tags(mysqli_real_escape_string($con,$_POST['firstname']));
+	$lastname = strip_tags(mysqli_real_escape_string($con,$_POST['lastname']));
+  	$email = strip_tags(mysqli_real_escape_string($con,$_POST['email']));
+  	$phone = strip_tags(mysqli_real_escape_string($con,$_POST['phone']));
+  	$address = strip_tags(mysqli_real_escape_string($con,$_POST['address']));
+  	$username = strip_tags(mysqli_real_escape_string($con,$_POST['username']));
+	$password = strip_tags(mysqli_real_escape_string($con,$_POST['password']));
 	$epass = hash('sha512', $username.$password);
 	$time = time();
 

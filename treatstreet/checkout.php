@@ -13,10 +13,10 @@ session_start();
 	$list = '';
 	for($i = 0; $i < count($item); $i++){
 		if(count($item) == $i+1){
-			$list .= mysqli_real_escape_string($con, $item[$i]) . ',' . $quantity[$i];
+			$list .= strip_tags(mysqli_real_escape_string($con, $item[$i])) . ',' . $quantity[$i];
 		}
 		else{
-			$list .= mysqli_real_escape_string($con, $item[$i]) . ',' . $quantity[$i] . ',';
+			$list .= strip_tags(mysqli_real_escape_string($con, $item[$i])) . ',' . $quantity[$i] . ',';
 		}
 	}
 	$total = $_POST['total'];

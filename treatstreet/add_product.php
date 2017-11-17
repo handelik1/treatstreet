@@ -1,10 +1,10 @@
 <?php
 	require('connect.php');
 
-	$name = mysqli_real_escape_string($con,$_POST['new_name']);
-	$description = mysqli_real_escape_string($con,$_POST['new_description']);
-	$price = mysqli_real_escape_string($con,$_POST['new_price']);
-	$quantity = mysqli_real_escape_string($con,$_POST['new_quantity']);
+	$name = strip_tags(mysqli_real_escape_string($con,$_POST['new_name']));
+	$description = strip_tags(mysqli_real_escape_string($con,$_POST['new_description']));
+	$price = strip_tags(mysqli_real_escape_string($con,$_POST['new_price']));
+	$quantity = strip_tags(mysqli_real_escape_string($con,$_POST['new_quantity']));
 
 	$checkQuery = "select name from candy where name = '$name'";
 
@@ -42,7 +42,7 @@
 		$id = mysqli_fetch_row($candyIdQuery);
 		$id = $id[0];
 		foreach($typelist as $value){
-			$type = mysqli_real_escape_string($con, $value);
+			$type = strip_tags(mysqli_real_escape_string($con, $value));
 			$insertCandy = mysqli_query($con,"insert into types (tid, type) VALUES ('$id', '$type')");
 		}
 

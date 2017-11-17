@@ -26,7 +26,7 @@ $out .=     	'</div>';
 
 if(isset($_POST['candy'])){
 
-$candy = mysqli_real_escape_string($con,$_POST['candy']);
+$candy = strip_tags(mysqli_real_escape_string($con,$_POST['candy']));
 
 $candyQuery = mysqli_query($con, "select tid from types where type = '$candy'");
 

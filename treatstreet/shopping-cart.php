@@ -39,7 +39,7 @@ $item = $item[0];
 $checkQuery = $cartQuery = mysqli_query($con, "select item from cart where item = '$item' and cartId = '$user'");
 $check = mysqli_num_rows($checkQuery);
 
-$candy = mysqli_real_escape_string($con,$_POST['add-candy']);
+$candy = strip_tags(mysqli_real_escape_string($con,$_POST['add-candy']));
 
 if($check > 0){
 

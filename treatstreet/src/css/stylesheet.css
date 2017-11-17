@@ -565,3 +565,87 @@ input[type=checkbox]{
 	overflow-x: hidden;
 	margin-bottom: 15px;
 }
+
+/********Orders*********/
+
+.hr-wrapper{
+	height: 38%;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.hr-title{
+	text-decoration: underline;
+}
+
+.hr-text{
+	font-size: 1.3em;
+}
+
+.employee-panel{
+    z-index: 30;
+    margin-top: 170px;
+    margin-left: 35%;
+    width: 30%;
+    height: 265px;
+    border-radius: 5px;
+}
+
+.employee-form{
+    background-color: #3d3dff;
+    border-radius: 5px;
+    margin-bottom: 0px !important;
+    box-shadow: 0px 0px 5px white;
+}
+
+
+.employee-header{
+    text-align: center;
+    color: white;
+    margin-bottom: 0px;
+    height: 50px;
+    line-height: 50px;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+#add-employee-button{
+    width:160px;
+    height: 30px;
+    float:right;
+    font-weight: bold;
+    text-shadow: none;
+    background-color: #3d3dff;
+    color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+    border-top: 1px solid gray;
+    border-left: 1px solid gray;
+}
+
+.employee-submit{
+	width:100px;
+    height: 30px;
+    float:right;
+    font-weight: bold;
+    text-shadow: none;
+    background-color: #3d3dff;
+    color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+    border-top: 1px solid gray;
+    border-left: 1px solid gray;
+}

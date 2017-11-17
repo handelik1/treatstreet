@@ -6,8 +6,8 @@ session_start();
 	require("connect.php");
 	
 	
-	$username= mysqli_real_escape_string($con,$_POST['username']);
-    $password= mysqli_real_escape_string($con,$_POST['password']);
+	$username= strip_tags(mysqli_real_escape_string($con,$_POST['username']));
+    $password= strip_tags(mysqli_real_escape_string($con,$_POST['password']));
 	$epass= hash('sha512', $username.$password);
 	
 	$logQuery= "select * from users where username= '$username' and password= '$epass'";
