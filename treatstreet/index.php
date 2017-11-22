@@ -78,6 +78,16 @@ $out .=     	'</div>';
 else{
 
 $out .=		  '<form action = "results.php" method = "post">';
+
+$out .=			'<div class="row">';
+$out .=		    	'<div class="col-md-12">';
+$out .=					'<div class = "search-wrapper">';
+$out .=						'<input class = "search-bar" type = "text" name = "candy-search" placeholder = "Search For Candy" required>';
+$out .=						'<input class = "search-button" type = "submit" value = "Search">';
+$out .=					'<div>';
+$out .=				'<div>';
+$out .=			'</div>';
+
 $out .= 		'<div class="row">';
 $out .=		    	'<div class="col-md-6">';
 

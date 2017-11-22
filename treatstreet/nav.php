@@ -1,11 +1,19 @@
 <?php
 require('connect.php');
+
 $out .= '<nav class="navbar navbar-color navbar-edit">
 		  <div class="container-fluid">
 		    <div class="navbar-header">
 		      <a href = "index.php" class="navbar-brand brand-color" href="#">Treat Street</a>
-		    </div>
-		      <form action = "results.php" method = "post">
+		    </div>';
+
+if(!isset($_SESSION['user'])){
+
+$out .=		'<div class = "navbar-brand slogan">All Of Your Favorite Candies Wrapped Up In One Fun Place</div>';
+}
+if(isset($_SESSION['user']))
+{
+$out .=		  '<form action = "results.php" method = "post">
 			    <ul class="nav navbar-nav">
 			      <li><a href = "index.php" class = "home-button" href="#">Home</a></li>
 			      <li class="dropdown">
@@ -59,8 +67,9 @@ $out .= '<nav class="navbar navbar-color navbar-edit">
 			        </ul>
 			      </li>
 		    	</ul>
-		       <input id = "candy-input" type = "hidden" name = "candy" value = "all">
-		    <ul class="nav navbar-nav navbar-right">';
+		       <input id = "candy-input" type = "hidden" name = "candy" value = "all">';
+}
+$out .=		   '<ul class="nav navbar-nav navbar-right">';
 if(!isset($_SESSION['user'])){
 $out .=		 '<li data-toggle="modal" data-target="#register-modal"><a href="#" ><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>';
 }
