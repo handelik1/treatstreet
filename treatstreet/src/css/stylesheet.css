@@ -690,3 +690,27 @@ input[type=checkbox]{
     border-top: 1px solid gray;
     border-left: 1px solid gray;
 }
+
+/********Remove Candy*******/
+
+.remove-item{
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.remove-wrapper{
+    height: 30%;
+    overflow-y: auto;
+    text-align: center;
+    margin-left: 30%;
+}
+
+.remove-wrapper-wrapper{
+	overflow-y: auto;
+    text-align: center;
+    margin-left: 30%;
+}
+
+.remove-candy-button{
+	margin-left: 0px !important;
+}

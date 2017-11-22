@@ -7,6 +7,7 @@ $out .= '<nav class="navbar navbar-color navbar-edit">
 		    </div>
 			    <ul class="nav navbar-nav">
 			      <li><a href = "new_product.php" class = "home-button">Add New Products</a></li>
+			      <li><a href = "remove_product.php" class = "home-button">Remove Product</a></li> 
 			      <li><a href = "orders.php" class = "home-button">View Orders</a></li> 
 			      <li><a href = "hr.php" class = "home-button">Human Resources</a></li>         
 		    	</ul>';
