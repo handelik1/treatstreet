@@ -32,16 +32,13 @@ $out .=     '</div>';
 $out .=	'<div class="row">';
 
 $out .=		'<div class="col-md-2">';
-$out .=				'<div class = "remove-back-button-wrapper">';
-$out .=					'<a class = "back-button" href = "admin.php">Back</a>';
-$out .=				'</div>';
 $out .=		'</div>';
 
 $out .=		'<div class="col-md-8">
 				<form id = "search-form" class = "search-form-results text-center" action="remove_product.php" method="post">
 					<input type = "hidden" name = "remove" value = "remove">
-					<input class = "search-bar-results" placeholder = "Search for Candy" type = "text" name = "candy-search" required><br>
-					<input form = "search-form" class = "remove-button-results" type = "submit" value = "Go">
+					<input class = "candy-search search" placeholder = "Search for Candy" type = "text" name = "candy-search" required>
+					<input form = "search-form" class = "candy-button search" type = "submit" value = "Go">
 				</form>					
 			</div>';
 
@@ -72,7 +69,7 @@ $out .=	'<div class="row">';
 							$out .=		'<div class="col-md-12">';
 								$out .= 		'<div class = "result" id = "result'.$c.'">';
 								$out .=			'<h4 class = "remove-title remove-item" id = "remove-title'.$c.'">'.$value['name'].'</h4>';
-								$out .= 		'<input class = "remove-check" type = "checkbox" name = "check_candy[]" value = "'.$value['name'].'">';
+								$out .= 		'<input class = "remove-check" type = "checkbox" name = "candy_list[]" value = "'.$value['name'].'">';
 								$out .=			'</div>';
 							$out .= '</div>';
 							$c++;
@@ -104,7 +101,7 @@ $out .=	'</div>';
 $out .=	'<div class = "row">';
 $out .=		'<div class = "col-md-12">';
 $out .=			'<div class = "remove-button-wrapper text-center">';
-$out .=      		'<input form = "remove_candy_form" type="submit" id = "submit" class="remove-candy-button text-center" value="Remove" ">';
+$out .=      		'<input form = "remove_candy_form" type="submit" id = "submit" id = "remove-candy-button" class="remove-candy-button text-center" value="Remove" ">';
 $out .=			'</div>';
 $out .=		'</div>';
 $out .=	'</div>';
@@ -117,6 +114,16 @@ $out .= '</body>';
 
 echo $out;
 	
-require('footer.html');
 
 ?>
+
+<script>
+
+if ($(".remove-title")[0]){
+    document.getElementById('submit').style.display = 'inline-block';
+} 
+else {
+    document.getElementById('submit').style.display = 'none';
+}
+
+</script>
