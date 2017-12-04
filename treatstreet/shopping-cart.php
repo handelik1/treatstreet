@@ -140,6 +140,7 @@ $total = number_format(round($total + $tax,2),2);
 			$out .=				'<div class = "row">';
 			$out .=				  '<div class = "col-md-12">';
 			$out .=						'<h4 class = "checkout-item">'.$cartItem['name'].'</h5>';
+			$out .=           			'<input name="id[]" id="item-name" type = "hidden" value = "'.$itemNumber.'">';
 			$out .=           			'<input name="item[]" id="item-name" type = "checkbox" value = "'.$cartItem['name'].'" checked>';
 			$out .=						'<h4 id = "item-quantity" class = "checkout-item pull-right">'.$value['quantity'].'</h5>';
 			$out .=           			'<input name="quantity[]" id="checkout-item-quantity" type = "checkbox" value = "'.$value['quantity'].'" checked>';
